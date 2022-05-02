@@ -16,6 +16,12 @@ h2 {
   text-align: center;
 }
 
+footer > img {
+  display: block;
+  margin-left: auto;
+  margin-rigth: 10%;
+  height: 50px;
+}
 ul > li {
   font-size: 80%;
 }
