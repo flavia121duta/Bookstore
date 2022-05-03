@@ -8,7 +8,6 @@ html {
   font-size: 1em;
   line-height: 1.4;
   background-color: lightblue;
-  /*border: 5px;*/
   margin: 1em;
 }
 
@@ -17,11 +16,24 @@ h2 {
 }
 
 footer > img {
-  display: block;
-  margin-left: auto;
-  margin-rigth: 10%;
+  display: inline;
+  float: right;
   height: 50px;
 }
+
+footer > div:nth-of-type(1) {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  border-radius: 50%;
+  animation: cercMiscator 5s linear infinite alternate;
+}
+
+@keyframes cercMiscator {
+  0%   {background-color:red; left:0; top:0;}
+  100%  {background-color:yellow; left: 100%; top:0;}
+}
+
 ul > li {
   font-size: 80%;
 }
@@ -241,9 +253,10 @@ article > p {
 
 table {
   border-collapse: collapse;
-  border-radius: 25px;
+  border-top-left-radius: 10%; /*nu merge sa rotunjeasca coltul din stanga sus*/
   width: 100%;
-  border: 2px solid red;
+  height: auto;
+  border: 2px solid blueviolet;
 }
 
 th, td {
@@ -254,7 +267,6 @@ th, td {
 tr:nth-child(even) {background-color: #f2f2f2;}
 tr:first-child {background-color: cadetblue;}
 tr:hover:not(tr:first-child) {background-color: deeppink;}
-
 
 /*--------------------------------------------------------------*/
 
