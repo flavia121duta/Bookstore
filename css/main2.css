@@ -1,0 +1,81 @@
+/* metoda flex */
+#container-poze{
+    display: flex;
+    flex-wrap: wrap;
+}
+#container-poze > figure{
+    width: 33%;
+    text-align: center;
+    transform: scale(0);
+    /* opacity: 0; */
+    animation: aparitie 4s forwards;
+}
+
+#container-poze > figure:nth-child(1) {
+    animation-delay: 1s;
+}
+
+#container-poze > figure:nth-child(2) {
+    animation-delay: 2s;
+}
+
+#container-poze > figure:nth-child(3) {
+    animation-delay: 3s;
+}
+
+#container-poze > figure:nth-child(4) {
+    animation-delay: 4s;
+}
+
+#container-poze > figure:nth-child(5) {
+    animation-delay: 5s;
+}
+
+#container-poze > figure:nth-child(6) {
+    animation-delay: 6s;
+}
+
+#container-poze > figure:nth-child(7) {
+    animation-delay: 7s;
+}
+
+#container-poze > figure:nth-child(8) {
+    animation-delay: 8s;
+}
+
+#container-poze > figure:nth-child(9) {
+    animation-delay: 9s;
+}
+
+
+#container-pagina > #home > p {
+    transition: font-size 3s, color 2s, transform 2s;
+
+}
+#container-pagina > #home > p:hover {
+    font-size: 40px;
+    color: blueviolet;
+    transform: skew(15deg);
+}
+
+@keyframes aparitie{
+    0% {
+        /* opacity: 0; */
+        transform: scale(0);
+    }
+    100% {
+        /* opacity: 1; */
+        transform: scale(1);
+    }
+}
+
+/* metoda grid */
+/* #container-poze {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px 10px; /* linie coloana
+}
+
+#container-poze>figure{
+    text-align: center;
+} */
