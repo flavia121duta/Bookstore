@@ -1,1 +1,1 @@
-Leraning GitHub in VSCode
+GitHub in VSCode
