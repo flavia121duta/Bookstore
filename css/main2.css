@@ -1,9 +1,29 @@
+header h1 {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+header img {
+    height: 15vw;
+    float: right;
+}
+
+img {
+    width: 20vw;
+    overflow: hidden;
+    flex: 1 0 auto;
+    margin: 1em;
+    text-align: center;
+}
+
 /* metoda flex */
-#container-poze{
+#container-poze {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
-#container-poze > figure{
+
+#container-poze > figure {
     width: 33%;
     text-align: center;
     transform: scale(0);
@@ -47,18 +67,17 @@
     animation-delay: 9s;
 }
 
+/*#container-pagina > #home > p {*/
+/*    transition: font-size 3s, color 2s, transform 2s;*/
+/*}*/
 
-#container-pagina > #home > p {
-    transition: font-size 3s, color 2s, transform 2s;
+/*#container-pagina > #home > p:hover {*/
+/*    font-size: 40px;*/
+/*    color: blueviolet;*/
+/*    transform: skew(15deg);*/
+/*}/**/
 
-}
-#container-pagina > #home > p:hover {
-    font-size: 40px;
-    color: blueviolet;
-    transform: skew(15deg);
-}
-
-@keyframes aparitie{
+@keyframes aparitie {
     0% {
         /* opacity: 0; */
         transform: scale(0);
