@@ -15,6 +15,7 @@ const htmlQS = document.querySelector('html')
 const bodyQS = document.querySelector('body')
 const headerQS = document.querySelector('header')
 const footerQS = document.querySelector('footer')
+const ignoraQS = document.querySelectorAll('.ignora')
 let arrayObj = [htmlQS, bodyQS, headerQS, footerQS]
 buton.addEventListener('click', changeBackground)
 function changeBackground(){
@@ -22,9 +23,18 @@ function changeBackground(){
     bodyQS.style.backgroundColor = color;
     headerQS.style.backgroundColor = color;
     footerQS.style.backgroundColor = color;
+    ignoraQS[0].style.backgroundColor = color;
+    ignoraQS[1].style.backgroundColor = color;
     color = color === 'grey' ? `lightblue` : `grey`;
-
 }
+
+//------------------------------------------------------
+
+const list = document.querySelector('#notice .lista');
+
+list.addEventListener('click', (event) => {
+    event.target.remove();
+});
 
 //------------------------------------------------------
 

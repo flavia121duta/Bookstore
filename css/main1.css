@@ -358,12 +358,18 @@ th, td {
     padding: 8px;
 }
 
+.ignora {
+    background-color: lightblue;
+    border-right: 2px solid blueviolet;
+}
+
 tr:nth-child(even):not(.ignora) {
     background-color: floralwhite;
 }
 
 tr:first-child {
     background-color: cadetblue;
+    border-bottom: 2px solid blueviolet;
 }
 
 td:hover:not(.ignora) {
