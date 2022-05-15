@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <img src="img/butterfly.png">
+        <h1 class="fixed-title">Galerie</h1>
 
         <select id="order">
             <option value="crescator">Crescător</option>
@@ -23,43 +23,60 @@
             <option value="pret">Preț</option>
         </select>
 
-        <h1>Galerie</h1>
+        <div class="big-content"></div>
     </header>
 
 <div id="container-poze">
     <figure>
         <img src="img/p1.jpg" alt="p1">
-        <figcaption>Din cer au căzut trei mere<br/>24 RON</figcaption>
+        <figcaption>Din cer au căzut trei mere<br/>32 RON</figcaption>
     </figure>
     <figure>
         <img src="img/p2.jpeg" alt="p2">
-        <figcaption>Bunica mi-a zis să-ți spun că-i pare rău<br/>30 RON</figcaption>
+        <figcaption>Bunica mi-a zis să-ți spun că-i pare rău<br/>48 RON</figcaption>
     </figure>
     <figure>
         <img src="img/p3.jpg" alt="p3">
-        <figcaption>Integrala poeziei</figcaption>
+        <figcaption>Integrala poeziei<br/>70 RON</figcaption>
     </figure>
     <figure>
         <img src="img/p4.jpg" alt="p4">
-        <figcaption>Înainte ca ochiul să-și fi terminat privirea</figcaption>
+        <figcaption>Înainte ca ochiul să-și fi terminat privirea<br/>25 RON</figcaption>
     </figure>
     <figure>
         <img src="img/p5.jpg" alt="p5">
-        <figcaption>Classic cars</figcaption>
+        <figcaption>Classic cars<br/>40 RON</figcaption>
     </figure>
     <figure>
         <img src="img/p6.jpg" alt="p6">
-        <figcaption>How to bake PI</figcaption>
+        <figcaption>How to bake PI<br/>30 RON</figcaption>
     </figure>
     <figure>
         <img src="img/p7.jpg" alt="p7">
-        <figcaption>Insatiable Curiosity</figcaption>
+        <figcaption>Insatiable Curiosity<br/>20 RON</figcaption>
     </figure>
     <figure>
         <img src="img/p8.jpg" alt="p8">
-        <figcaption>Gerda Taro: Inventing Robert Capa</figcaption>
+        <figcaption>Gerda Taro: Inventing Robert Capa<br/>100 RON</figcaption>
     </figure>
 </div>
+
+    <br/><hr/><br>
+
+    <div id="BG" onclick="changeBG()">
+        <input type="radio" name="culoare" id="red"/>
+        <label for="red">Roșu</label>
+
+        <input type="radio" name="culoare" id="yellow"/>
+        <label for="yellow">Galben</label>
+
+        <input type="radio" name="culoare" id="blue"/>
+        <label for="blue">Albastru</label>
+
+        <input type="radio" name="culoare" id="green"/>
+        <label for="green">Verde</label>
+    </div>
+
 </body>
 
 </html>

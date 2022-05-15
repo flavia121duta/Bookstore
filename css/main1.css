@@ -133,7 +133,8 @@ nav {
     width: auto;
     background-color: lightcyan;
     position: sticky;
-    top: 0.5em;
+    top: 0.1em;
+    z-index: 1;
 }
 
 nav ul li a {
@@ -222,7 +223,9 @@ nav > ul.meniu li {
 
 #notice ul {
     height: 10%;
+    border: 2px solid red;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 #notice img {
@@ -391,19 +394,7 @@ td:hover:not(.ignora) {
 }
 
 @media screen and (max-width: 768px) {
-    /*.meniu {*/
-    /*    width: 25%;*/
-    /*    float: left;*/
-    /*}*/
 
-    /*.meniu ul {*/
-    /*    list-style-type: none;*/
-    /*}*/
-
-    /*.meniu li {*/
-    /*    margin-top: 10px;*/
-    /*    margin-bottom: 10px;*/
-    /*}*/
 }
 
 ::-moz-selection {

@@ -1,18 +1,60 @@
-header h1 {
-    display: inline-block;
-    margin: 0 auto;
+html {
+    height: 100%;
+    width: 100%;
+    font-family: Garamond, serif;
 }
 
-header img {
-    height: 15vw;
-    float: right;
+html:not(header) {
+    background-color: yellow;
 }
+
+body {
+    overflow: auto;
+    margin: 0;
+}
+
+header {
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 10em;
+}
+
+header select {
+    float: right;
+    top: 2em;
+    position: sticky;
+}
+/*---------------------------------------------------------------*/
+.stil1 {
+    color: blue;
+    position: fixed;
+    margin-left: 5%;
+}
+
+.stil2{
+    color: deeppink;
+    position: fixed;
+    margin-left: 5%;
+}
+/*---------------------------------------------------------------*/
+.big-content {
+    width: 100%;
+    height: 1000vh;
+    background: linear-gradient(180deg, #89fa05, #05fa09, #05fab1, #0526fa, #f205fa, #fa0526, #f2fa05);
+}
+
+.fixed-title {
+    position: fixed;
+    margin-left: 50%;
+    z-index: 10;
+}
+/*---------------------------------------------------------------*/
 
 img {
     width: 20vw;
     overflow: hidden;
     flex: 1 0 auto;
-    margin: 1em;
+    margin: 0.5em;
     text-align: center;
 }
 
@@ -24,10 +66,9 @@ img {
 }
 
 #container-poze > figure {
-    width: 33%;
+    width: 20%;
     text-align: center;
     transform: scale(0);
-    /* opacity: 0; */
     animation: aparitie 4s forwards;
 }
 
@@ -67,34 +108,13 @@ img {
     animation-delay: 9s;
 }
 
-/*#container-pagina > #home > p {*/
-/*    transition: font-size 3s, color 2s, transform 2s;*/
-/*}*/
-
-/*#container-pagina > #home > p:hover {*/
-/*    font-size: 40px;*/
-/*    color: blueviolet;*/
-/*    transform: skew(15deg);*/
-/*}/**/
-
 @keyframes aparitie {
     0% {
-        /* opacity: 0; */
         transform: scale(0);
     }
     100% {
-        /* opacity: 1; */
         transform: scale(1);
     }
 }
 
-/* metoda grid */
-/* #container-poze {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 15px 10px; /* linie coloana
-}
 
-#container-poze>figure{
-    text-align: center;
-} */
