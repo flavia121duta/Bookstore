@@ -1,22 +1,21 @@
-<!doctype html>
 <html lang="ro">
 
 <head>
     <meta charset="utf-8">
     <title>Bookstore</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/main1.css">
-    <script src="js/main1.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="main1.css">
+    <script src="main1.js" defer></script>
 </head>
 
 <body class="nightmode">
 
 <header id="inceput" class="nightmode">
     <h1>Bookstore „Antic ExLibris”</h1>
-    <img src="img/logo.png" alt="flying book">
-    <img id="moon" src="img/moon.png" alt="night">
+    <img src="logo.png" alt="flying book">
+    <img id="moon" src="moon.png" alt="night">
 </header>
 
 <nav>
@@ -27,7 +26,7 @@
                 <li><a href="#scheduale">Program</a></li>
                 <li><a href="#news">Noutăți</a></li>
                 <li><a href="#notice">Anunțuri</a></li>
-                <li><a href="galerie.html" target="_blank">Galerie</a></li>
+                <li><a href="/galerie" target="_blank">Galerie</a></li>
             </ul>
         </li>
         <li><a href="#">DESPRE</a>
@@ -45,7 +44,7 @@
                 <li><a href="#poem">Poezii</a></li>
             </ul>
         </li>
-        <li><a href="recenzii.html" target="_blank">RECENZII</a></li>
+        <li><a href="/recenzii" target="_blank">RECENZII</a></li>
         <li><a href="#contact">CONTACT</a></li>
     </ul>
 </nav>
@@ -65,7 +64,7 @@
             <div id="grid-news">
                 <article class="fiction" id="fiction">
                         <h3 class="title">Din cer au căzut trei mere</h3>
-                        <img src="img/p1.jpg" alt="Poza carte">
+                        <img src="p1.jpg" alt="Poza carte">
                         <ul>
                             <li>Autor: Narine Abgaryan</li>
                             <li>An apariție: 2021</li>
@@ -94,7 +93,7 @@
 
                 <article class="fiction">
                         <h3 class="title">Bunica mi-a zis să-ți spun că-ți pare rău</h3>
-                        <img src="img/p2.jpeg" alt="Poza carte">
+                        <img src="p2.jpeg" alt="Poza carte">
                         <ul>
                             <li>Autor: Fredrik Backman</li>
                             <li>An apariție: 2020</li>
@@ -123,7 +122,7 @@
 
                 <article class="poem" id="poem">
                     <h3 class="title">Integrala poeziei</h3>
-                    <img src="img/p3.jpg" alt="Poza volum">
+                    <img src="p3.jpg" alt="Poza volum">
                     <ul>
                         <li>Autor: Nichita Stănescu</li>
                         <li>An apariție: 2013</li>
@@ -152,7 +151,7 @@
 
                 <article class="poem">
                     <h3 class="title">Înainte ca ochiul să-și fi terminat privirea</h3>
-                    <img src="img/p4.jpg" alt="Poza volum">
+                    <img src="p4.jpg" alt="Poza volum">
                     <ul>
                         <li>Autor: Nora Iuga</li>
                         <li>An apariție: 2019</li>
@@ -176,7 +175,7 @@
 
                 <article class="education">
                     <h3 class="title">How to Bake Pi: An Edible Exploration of the Mathematics of Mathematics</h3>
-                    <img src="img/p6.jpg" alt="Poza carte">
+                    <img src="p6.jpg" alt="Poza carte">
                     <ul>
                         <li>Autor: Cheng Eugenia</li>
                         <li>An apariție: 2015</li>
@@ -204,7 +203,7 @@
 
                 <article class="education" id="education">
                     <h3 class="title">Complete Illustrated Encyclopedia of Classic Cars</h3>
-                    <img src="img/p5.jpg" alt="Poza carte">
+                    <img src="p5.jpg" alt="Poza carte">
                     <ul>
                         <li>Autor: Buckle Martin</li>
                         <li>An apariție: 2017</li>
@@ -225,7 +224,7 @@
 
                 <article class="art" id="art">
                     <h3 class="title">Leonardo: Insatiable Curiosity</h3>
-                    <img src="img/p7.jpg" alt="Poza carte">
+                    <img src="p7.jpg" alt="Poza carte">
                     <ul>
                         <li>Autor: Justin Smith</li>
                         <li>An apariție: 2015</li>
@@ -249,7 +248,7 @@
 
                 <article class="art">
                     <h3 class="title">Gerda Taro: Inventing Robert Capa</h3>
-                    <img src="img/p8.jpg" alt="Poza carte">
+                    <img src="p8.jpg" alt="Poza carte">
                     <ul>
                         <li>Autor: Jane Rogoyska</li>
                         <li>An apariție: 2013</li>
@@ -367,7 +366,7 @@
             <br/><br/>
 
             <a class="ancora" href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
-                <img src="img/qr_code.jpg" alt="Rick Astley">
+                <img src="qr_code.jpg" alt="Rick Astley">
                 <figcaption style="text-align: center">Scan me!</figcaption>
             </a>
         </section>
@@ -396,7 +395,7 @@
 </main>
 
 <footer class="nightmode">
-
+    <%- include('footer') %>
 </footer>
 
 </body>

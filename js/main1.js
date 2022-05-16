@@ -68,7 +68,7 @@ container.onclick = function() {
 
 let myWindow; // globala pt a fi vazuta si la apelul close()
 function openWin() {
-    myWindow = window.open("galerie.html", "_blank"); // TODO: nu deschide intr-o fereastra noua: C7, slide 38
+    myWindow = window.open("/galerie", "_blank"); // TODO: nu deschide intr-o fereastra noua: C7, slide 38
     myWindow.blur();
 }
 

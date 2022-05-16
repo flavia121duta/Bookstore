@@ -1,0 +1,31 @@
+footer img {
+    display: inline;
+    float: right;
+    height: 50px;
+}
+#ping-pong {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    border-radius: 50%;
+    animation: cercMiscator 5s linear infinite alternate;
+}
+@keyframes cercMiscator {
+    0% {
+        background-color: red;
+        left: 0;
+        top: 0;
+    }
+    100% {
+        background-color: yellow;
+        left: 100%;
+        top: 0;
+    }
+}
+footer a > img {
+    transition: 2s;
+}
+footer a > img:hover {
+    transform: rotate(60deg) scale(1.5);
+    opacity: 0.5;
+}

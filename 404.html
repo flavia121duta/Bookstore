@@ -40,6 +40,7 @@
     img {
       margin: 0 auto;
       height: 30%;
+      display: none;
     }
 
     @media only screen and (max-width: 280px) {
@@ -56,13 +57,19 @@
 
     }
   </style>
+
+  <script>
+    let delay = setTimeout( () => {
+      document.querySelector('img').style.display = "block";
+    }, 2000);
+  </script>
 </head>
 
 <body>
   <h1>Page Not Found</h1>
   <p>Sorry, but the page you were trying to view does not exist.</p>
 
-  <img src = "img/pink_panther.png" alt="Pink Panthere">
+  <img src = "pink_panther.png" alt="Pink Panthere">
 </body>
 
 </html>
