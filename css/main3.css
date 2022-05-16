@@ -1,0 +1,27 @@
+header {
+    height: 20vh;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#titlu {
+    width: 25vw;
+    min-width: 10vw;
+}
+
+#recenzie {
+    min-width: 20vw;
+    min-height: 20vh;
+
+    max-width: 40vw;
+    max-height: 40vh;
+}
+
+form button {
+    max-width: fit-content;
+}
