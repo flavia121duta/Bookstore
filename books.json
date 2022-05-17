@@ -1,0 +1,42 @@
+[
+    {
+        "src": "p1.jpg",
+        "titlu": "Din cer au căzut trei mere",
+        "pret": 32
+     },
+     {
+           "src": "p2.jpeg",
+           "titlu": "Bunica mi-a zis să-ți spun că-i pare rău",
+            "pret": 48
+      },
+     {
+           "src": "p3.jpg",
+           "titlu": "Integrala poeziei",
+            "pret": 70
+      },
+     {
+           "src": "p4.jpg",
+           "titlu": "Înainte ca ochiul să-și fi terminat privirea",
+            "pret": 25
+      },
+     {
+           "src": "p5.jpg",
+           "titlu": "Classic cars",
+            "pret": 40
+      },
+     {
+           "src": "p6.jpg",
+           "titlu": "How to bake PI",
+            "pret": 30
+      },
+     {
+           "src": "p7.jpg",
+           "titlu": "Insatiable Curiosity<",
+            "pret": 20
+      },
+     {
+           "src": "p8.jpg",
+           "titlu": "Gerda Taro: Inventing Robert Capa",
+            "pret": 100
+      }
+]

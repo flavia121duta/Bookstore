@@ -36,6 +36,11 @@ list.addEventListener('dblclick', (event) => {
     event.target.remove();
 });
 
+list.addEventListener('click', (event) => {
+    event.target.style.textDecoration = "line-through";
+    event.target.style.color = "grey";
+});
+
 //------------------------------------------------------
 
 const homeColors = ['pink', 'red', 'yellow', 'blue', 'white', 'violet', 'hotpink', 'cornsilk']

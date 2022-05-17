@@ -16,10 +16,10 @@
         <h1>Adaugă o recenzie</h1>
     </header>
 
-    <form method="post" action = "/recenzii">
+    <form method="post" enctype="multipart/form-data">
         <label>Titlu <input type="text" name="titlu" id="titlu" required></label>
 
-        <label>Atașează poză <input type="file" name="file"></label>
+        <label>Atașează poză <input type="file" name="img"></label>
 
         <label>Notă (1 - 10)<input type="range" min="1" max="10" step="1" name="numar" required></label>
 
@@ -30,7 +30,7 @@
             <label><input type="radio" name="recomandare" value="nuRecomand"> Nu recomand</label>
         </span>
 
-        <label>Data achiziționării <input type="date" value="" /></label>
+        <label>Data achiziționării <input type="date" value="" name = "data"/></label>
 
         <label for="recenzie">Recenzia dmv. aici: </label>
         <textarea name="recenzie" id="recenzie">Recenzie </textarea>

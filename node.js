@@ -1,9 +1,14 @@
 const express = require('express');
 const fs = require('fs');
 const session = require('express-session');
+const path = require('path');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const app = express();
+const formidableMiddleware = require('./middlewares/formidableMiddleware');
+
+const dataDir = path.join(__dirname,"infoRecenzii");
+const imageDir = path.join(__dirname, "imgRecenzii");
 
 const port = 3000;
 
@@ -12,7 +17,9 @@ app.use(express.static(`${__dirname}/js`));
 app.use(express.static(`${__dirname}/img`));
 app.set('view engine', 'ejs');
 
-let urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use(formidableMiddleware());
+
+// let urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 // index
 app.get('/?', (req, res) => {
@@ -27,8 +34,27 @@ app.get('/recenzii', (req, res) => {
     res.render('recenzii');
 });
 
-app.post('/recenzii', urlencodedParser,(req, res) => {
-    fs.appendFileSync(`${__dirname}/infoRecenzii.json`, `${JSON.stringify(req.body)}\n`);
+app.post('/recenzii', formidableMiddleware(), (req, res) => {
+    console.log('love');
+    const image = req.files.img;
+    const id = Date.now();
+    const imageExt = image.originalFilename.split(".").at(-1);
+    const fileData = fs.readFileSync(image.filepath);
+    console.log(fileData);
+    fs.writeFileSync(path.join(imageDir, `${id}.${imageExt}`), fileData);
+    const foto = {
+        id,
+        titlu: req.body.titlu,
+        img: `/imgRecenzii/${id}.${imageExt}`,
+        range: req.body.numar,
+        email: req.body.adresa,
+        recomandare: req.body.recomandare,
+        data: req.body.data,
+        recenzie:req.body.recenzie
+    }
+
+    console.log(foto);
+    fs.writeFileSync(path.join(dataDir, `${id}.json`), JSON.stringify(foto));
     res.redirect('/recenzii');
 });
 
@@ -38,5 +64,5 @@ app.all('*', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Serverul ruleaza la portul: ${port}`);
+    console.log(`Serverul a pornit la host: ${port}`);
 });

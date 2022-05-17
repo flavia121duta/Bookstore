@@ -1,0 +1,3 @@
+let zile = function (data) {
+
+}
