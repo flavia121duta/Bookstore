@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <title>Recenzii</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="footerStyle.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <% Object.keys(infoRecenzii).forEach(element =>{ %>
+        <h1><%=infoRecenzii[element].titlu%></h1>
+        <p><%=infoRecenzii[element].numar%></p>
+        <p><%=infoRecenzii[element].adresa%></p>
+        <p><%=infoRecenzii[element].recomandare%></p>
+        <p><%=infoRecenzii[element].data%></p>
+        <p><%=infoRecenzii[element].recenzie%></p>
+        <img src="">
+    <% }) %>
+</body>
+
+</html>

@@ -16,6 +16,7 @@ const port = 3000;
 app.use(express.static(`${__dirname}/css`));
 app.use(express.static(`${__dirname}/js`));
 app.use(express.static(`${__dirname}/img`));
+app.use(express.static(`${__dirname}/json`));
 app.set('view engine', 'ejs');
 
 // app.use(formidableMiddleware());
@@ -73,13 +74,27 @@ app.post('/recenzii', (req, res) => {
         fs.rename(oldPath, newPath, () => {
             console.log('ly');
         });
-        console.log(files.img.originalFilename);
-        console.log(typeof(fields));
 
-        fs.appendFileSync(`${__dirname}/infoRecenzii.json`, `${JSON.stringify(fields)} \n`);
+        // fs.appendFileSync(`${__dirname}/infoRecenzii.json`, `${JSON.stringify(fields)} \n`);
+        let f = JSON.parse(fs.readFileSync(`${__dirname}/json/infoRecenzii.json`, 'utf-8'));
+        f[Object.keys(f).length + 1] = fields;
+        f[Object.keys(f).length].src = newPath;
+        console.log(f);
+        // console.log(typeof f);
+        fs.writeFileSync(
+            `${__dirname}/json/infoRecenzii.json`,
+            JSON.stringify(f)
+        );
     });
     res.redirect('/');
 });
+
+let infoRecenzii = JSON.parse(fs.readFileSync(`${__dirname}/json/infoRecenzii.json`))
+app.get('/afisare', (req,res)=>{
+    res.render('afisare', {
+        infoRecenzii: infoRecenzii
+    })
+})
 
 app.all('*', (req, res) => {
     res.sendFile(`${__dirname}/404.html`);

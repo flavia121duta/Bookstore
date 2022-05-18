@@ -57,7 +57,7 @@ document.querySelector('#home').addEventListener('mouseover', coloreaza);
 //document.querySelector('#history').addEventListener('mouseover', delay);
 
 let container = document.getElementById("presentation");
-let t = setInterval(schimba,2000,container,"red","blue");
+let t = setInterval(schimba,200,container,"red","blue");
 
 function schimba(elem, culoare1, culoare2) {
     if(elem.style.backgroundColor===culoare1)
@@ -147,6 +147,28 @@ function myFunction() {
     document.getElementById("demo").innerHTML =
         "Left: " + rect.left.toFixed() + ", Top: " + rect.top.toFixed() + ", Width: " + rect.width + ", Height: " + rect.height;
 }
+
+//----------------------------------------------------------
+
+// inserare de element in pagina
+document.getElementById('contact').addEventListener('click', (event) => {
+        let cx=event.clientX; //pozitia mouse-ului
+        let cy=event.clientY;
+
+        let div = document.createElement("div");
+        div.classList.add('butterfly');
+
+        div.style.position="absolute";
+        div.style.left=cx + "px";
+        div.style.top=cy + "px";
+        div.style.display = "inline";
+        div.style.backgroundImage = `url("butterfly.png")`;
+
+        document.getElementById('contact').appendChild(div);
+        setTimeout(function(){document.getElementById('contact').removeChild(div);},4000); // stergere dupa 4s
+
+    }
+);
 
 //----------------------------------------------------------
 

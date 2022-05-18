@@ -389,6 +389,16 @@ td:hover:not(.ignora) {
 
 /*--------------------------------------------------------------*/
 
+.butterfly {
+    height: 10vh;
+    width: 15vw;
+    background-size: contain;
+    background-size: 100% 100%;
+    z-index: 100;
+}
+
+/*--------------------------------------------------------------*/
+
 @media screen and (min-width: 768px) {
     .meniu {
         width: 100%;
