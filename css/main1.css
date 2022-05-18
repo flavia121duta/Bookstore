@@ -96,7 +96,7 @@ header > img:first-of-type {
     position: fixed;
     right: 0;
     top: 0;
-    height: 15%;
+    height: 12%;
     transition: 3s;
     animation: deplasareCarte 15s linear 2s infinite;
 }
@@ -381,6 +381,14 @@ td:hover:not(.ignora) {
 
 /*--------------------------------------------------------------*/
 
+#history > p {
+    background-color: lightsteelblue;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*--------------------------------------------------------------*/
+
 @media screen and (min-width: 768px) {
     .meniu {
         width: 100%;
@@ -394,8 +402,21 @@ td:hover:not(.ignora) {
 }
 
 @media screen and (max-width: 768px) {
+    #news {
+        width: 40%;
+    }
 
+    #grid-news {
+        display: block;
+    }
+
+    #news > #grid-news > article > img {
+        width: 100%;
+        height: auto;
+    }
 }
+
+/*----------------------------------------------------------------------*/
 
 ::-moz-selection {
     background: #b3d4fc;

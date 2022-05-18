@@ -40,7 +40,17 @@ div.addEventListener("click", (event)=>{
 let figures = document.querySelectorAll('figure');
 console.log(figures);
 let preturi = [32, 48, 70, 25, 40, 30, 20, 99.99];
-let titluri = ['a','b','f','e','c','s','u','i'];
+let titluri = [
+                "Din cer au căzut trei mere",
+                "Bunica mi-a zis să-ți spun că-i pare rău",
+                "Integrala poeziei",
+                "Înainte ca ochiul să-și fi terminat privirea",
+                "Classic cars",
+                "How to bake PI",
+                "Insatiable Curiosity",
+                "Gerda Taro: Inventing Robert Capa"
+            ];
+
 let surse = []
 let imagini = [];
 let index=0;
@@ -50,10 +60,10 @@ for (let img of figures) {
     img.pret = `${preturi[index]}`;
     img.titlu = `${titluri[index++]}`;
     imagini.push(img);
-    // TODO: folisind regex sau orice altceva pe lume, scoate tilul, pretul si sursa imaginii
 }
+
 function addOrder(x){
-    x.style.order=initialOrder;
+    x.style.order = initialOrder;
     initialOrder++;
 }
 
@@ -62,15 +72,6 @@ function Book(sursaImg, titlu, pret) {
     this.title = titlu;
     this.pret = pret;
 }
-
-// let book1 = new Book("p1.jpg", "Din cer au căzut trei mere", 32);
-// let book2 = new Book("p2.jpeg", "Bunica mi-a zis să-ți spun că-i pare rău", 48);
-// //........
-//
-// let arr = [];
-// arr.push(book1);
-// arr.push(book2);
-// //........
 
 function sortarePret(x,y){
     return x.pret > y.pret ? 1 : -1;
@@ -111,6 +112,4 @@ order.addEventListener('change',ordoneaza)
 options.addEventListener('change',ordoneaza)
 
 
-
-// let buton1
 

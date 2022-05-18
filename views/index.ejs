@@ -351,7 +351,7 @@
             <h2>Anunțuri</h2><br/>
 
             <ul>
-                <div class="lista">
+                <div class="lista" onscroll="myFunction()">
                     <li><time datetime="2022-03-01">1 martie 2021</time> Eveniment: Lansare de carte</li>
                     <li><time datetime="2022-03-15">15 martie 2022</time> Promoție: la două cărți cumparate primiți una gratis!</li>
                     <li><time datetime="2022-04-20">20 decembrie 2020</time> Eveniment: Lansare de carte</li>
@@ -363,9 +363,15 @@
                 </div>
             </ul>
 
+            <p id="demo"></p>
+
             <br/><br/>
 
-            <a class="ancora" href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
+            <a id="ancora" href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
+            <!-- sau, direct din HTML:
+            <a id="ancora" href="https://youtu.be/dQw4w9WgXcQ" target="_blank" onclick="event.preventDefault()">
+            -->
+
                 <img src="qr_code.jpg" alt="Rick Astley">
                 <figcaption style="text-align: center">Scan me!</figcaption>
             </a>
@@ -381,14 +387,18 @@
             <button onclick="closeWin()">Close Galerie</button>
         </section>
 
-        <section id="history">
+        <section id="history" onclick="func2()">
             <h3 class="title">Scurt istoric din dezvoltarea librăriei noastre și cum am ajuns cine suntem în prezent</h3><br/>
+            <p onclick="func1(event)">
             Avem experienţa vânzării a peste 15 milioane cărţi.
             Din 2002 ne găsiţi în locaţia din strada Doamnei 23-25. Aici veți găsi cărți în limba engleză și română,
             produse de papetărie, agende și jucării la prețuri cu discount de pâna la 70% din prețul de listă.
             Din 2016 am deschis un nou magazin pe str. Gabroveni 61, vi-a-vis Cocor. Între 2011-2015 am funcționat și
             în locația din Bulevardul Brătianu nr.6, în Lipscani 79 între 2011-2015 și pe str. Academiei: 2010-2012,
             iar în perioada 2001-2008 în Pasajul Universităţii.
+            </p>
+            Stop propagation:
+            <input type="checkbox" id="check">
         </section>
     </div>
 
