@@ -67,14 +67,60 @@ app.get('/afisare', (req,res)=>{
     });
 })
 
+// login
+app.post('/login', (req, res) => {
+    const form = formidable();
+    form.parse(req, (err, fields, files) => {
+        if (err) {
+            next(err);
+            return;
+        }
+
+        let users = JSON.parse(
+            fs.readFileSync(`${__dirname}/json/users.json`, 'utf-8')
+        );
+
+        for (let i = 1; i <= Object.keys(users).length; i++) {
+            if (
+                users[i].username === fields.username &&
+                users[i].parola === fields.parola
+            ) {
+                res.sendFile('ok.html');
+            }
+        }
+        res.render('login');
+    });
+});
+
+app.get('/login', (res, req) => {
+    req.render('login');
+})
+
+app.post('/register', (req, res) => {
+    const form = formidable();
+    form.parse(req, (err, fields, files) => {
+        if (err) {
+            next(err);
+            return;
+        }
+
+        let users = JSON.parse(
+            fs.readFileSync(`${__dirname}/json/users.json`, 'utf-8')
+        );
+        users[Object.keys(users).length + 1] = fields;
+
+        fs.writeFileSync(
+            `${__dirname}/json/users.json`,
+            JSON.stringify(users)
+        );
+    });
+    res.render('login');
+});
+
+// 404
 app.all('*', (req, res) => {
     res.sendFile(`${__dirname}/404.html`);
 });
-
-app.get('/login', (req, res) => {
-
-});
-
 
 app.listen(port, () => {
     console.log(`Serverul a pornit la host: ${port}`);

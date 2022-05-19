@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="ro">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -11,23 +10,27 @@
 
 <body>
     <main>
-          <form action="/account" method="post" enctype="multipart/form-data"=>
+        <h1>Login</h1>
+        <div>
+        <form action="/login" method="post" enctype="multipart/form-data">
             <label>
-                Username: <input type="text" name="username" value="username" required/>
+                Username:
+                <input type="text" name="username" value="username" required/>
             </label>
-
+            <br/>
 
             <label>
                 Parola:
                 <input type="password" name="parola" value="test" required/>
             </label>
-
+            <br/>
 
             <input type="submit" value="Login" />
             <input type="submit" value="Register" formaction="/register"/>
 
           </form>
-        </main>
+          </div>
+    </main>
 </body>
 
 </html>
