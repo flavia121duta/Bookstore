@@ -81,11 +81,8 @@ app.post('/login', (req, res) => {
         );
 
         for (let i = 1; i <= Object.keys(users).length; i++) {
-            if (
-                users[i].username === fields.username &&
-                users[i].parola === fields.parola
-            ) {
-                res.sendFile('ok.html');
+            if (users[i].username === fields.username && users[i].parola === fields.parola) {
+                res.sendFile(`${__dirname}/ok.html`);
             }
         }
         res.render('login');
@@ -114,6 +111,7 @@ app.post('/register', (req, res) => {
             JSON.stringify(users)
         );
     });
+    res.render('');
     res.render('login');
 });
 
