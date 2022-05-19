@@ -83,7 +83,6 @@ function closeWin() {
 }
 
 //----------------------------------------------------------
-// TODO: ceva cu stopPropagation
 
 const f = function () {
     let n = document.getElementById("notice");
@@ -165,22 +164,27 @@ document.getElementById('contact').addEventListener('click', (event) => {
         div.style.backgroundImage = `url("butterfly.png")`;
 
         document.getElementById('contact').appendChild(div);
-        setTimeout(function(){document.getElementById('contact').removeChild(div);},4000); // stergere dupa 4s
-
+        // setTimeout(function(){document.getElementById('contact').removeChild(div);},3000);
     }
 );
 
 //----------------------------------------------------------
 
-// const g = function hide(e){
-//     e.currentTarget.style.visibility = 'hidden';
-//     console.log(e.currentTarget);
-// }
-//
-// let ps = document.getElementsByTagName('p');
-//
-// for(let i = 0; i < ps.length; i++) {
-//     ps[i].addEventListener('click', hide, false);
-// }
-//
-// document.body.addEventListener('click', hide, false);
+function hide(e) {
+    e.currentTarget.style.visibility = 'hidden';
+    console.log(e.currentTarget);
+}
+
+function show(e) {
+    e.currentTarget.style.visibility = 'visible';
+    console.log(e.currentTarget);
+}
+
+let ps = document.getElementsByTagName('p');
+
+for(let i = 0; i < ps.length; i++) {
+    ps[i].addEventListener('dblclick', hide, true);
+    // ps[i].addEventListener('click', show, true);
+}
+
+

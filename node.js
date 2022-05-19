@@ -5,7 +5,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const app = express();
-// const formidableMiddleware = require('./middlewares/formidableMiddleware');
 const formidable = require('formidable');
 
 const dataDir = path.join(__dirname,"infoRecenzii");
@@ -17,11 +16,8 @@ app.use(express.static(`${__dirname}/css`));
 app.use(express.static(`${__dirname}/js`));
 app.use(express.static(`${__dirname}/img`));
 app.use(express.static(`${__dirname}/json`));
+app.use(express.static(`${__dirname}/uploads`));
 app.set('view engine', 'ejs');
-
-// app.use(formidableMiddleware());
-
-// let urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 // index
 app.get('/?', (req, res) => {
@@ -36,30 +32,6 @@ app.get('/recenzii', (req, res) => {
     res.render('recenzii');
 });
 
-// app.post('/recenzii', formidableMiddleware(), (req, res) => {
-//     console.log('love');
-//     const image = req.files.img;
-//     const id = Date.now();
-//     const imageExt = image.originalFilename.split(".").at(-1);
-//     const fileData = fs.readFileSync(image.filepath);
-//     console.log(fileData);
-//     fs.writeFileSync(path.join(imageDir, `${id}.${imageExt}`), fileData);
-//     const foto = {
-//         id,
-//         titlu: req.body.titlu,
-//         img: `/imgRecenzii/${id}.${imageExt}`,
-//         range: req.body.numar,
-//         email: req.body.adresa,
-//         recomandare: req.body.recomandare,
-//         data: req.body.data,
-//         recenzie:req.body.recenzie
-//     }
-//
-//     console.log(foto);
-//     fs.writeFileSync(path.join(dataDir, `${id}.json`), JSON.stringify(foto));
-//     res.redirect('/recenzii');
-// });
-
 app.post('/recenzii', (req, res) => {
     const formUpload = `${__dirname}/uploads`;
 
@@ -72,28 +44,27 @@ app.post('/recenzii', (req, res) => {
         const oldPath = files.img.filepath;
         const newPath = `${formUpload}/${files.img.originalFilename}`;
         fs.rename(oldPath, newPath, () => {
-            console.log('ly');
+            console.log('<3');
         });
 
         // fs.appendFileSync(`${__dirname}/infoRecenzii.json`, `${JSON.stringify(fields)} \n`);
         let f = JSON.parse(fs.readFileSync(`${__dirname}/json/infoRecenzii.json`, 'utf-8'));
         f[Object.keys(f).length + 1] = fields;
-        f[Object.keys(f).length].src = newPath;
-        console.log(f);
-        // console.log(typeof f);
+        f[Object.keys(f).length].src = `<img class = "photo" src='${files.img.originalFilename}'`;
+
         fs.writeFileSync(
             `${__dirname}/json/infoRecenzii.json`,
             JSON.stringify(f)
         );
     });
-    res.redirect('/');
+    res.redirect('/afisare');
 });
 
 let infoRecenzii = JSON.parse(fs.readFileSync(`${__dirname}/json/infoRecenzii.json`))
 app.get('/afisare', (req,res)=>{
     res.render('afisare', {
         infoRecenzii: infoRecenzii
-    })
+    });
 })
 
 app.all('*', (req, res) => {
