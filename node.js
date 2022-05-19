@@ -80,12 +80,22 @@ app.post('/login', (req, res) => {
             fs.readFileSync(`${__dirname}/json/users.json`, 'utf-8')
         );
 
+        let testUsername = fields.username;
+        let arrTest = [];
         for (let i = 1; i <= Object.keys(users).length; i++) {
-            if (users[i].username === fields.username && users[i].parola === fields.parola) {
-                res.sendFile(`${__dirname}/ok.html`);
-            }
+            arrTest.push(users[i].username);
         }
-        res.render('login');
+        if (arrTest.includes(testUsername)) {
+            // res.render('login');
+            res.send('User deja existent');
+        } else {
+            for (let i = 1; i <= Object.keys(users).length; i++) {
+                if (users[i].username === fields.username && users[i].parola === fields.parola) {
+                    res.render('ok');
+                }
+            }
+            res.render('login');
+        }
     });
 });
 
