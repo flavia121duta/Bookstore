@@ -30,15 +30,18 @@ function stil2() {
 // la alegerea unui element din lista, fundalul paginii se modifica in culoarea corespunzatoare
 let div = document.getElementById("BG");
 let body = document.querySelector('body');
+let footer = document.querySelector('footer');
+console.log(footer);
 
 div.addEventListener("click", (event)=>{
     body.style.backgroundColor = `${event.target.value}`;
+    footer.style.backgroundColor = `${event.target.value}`;
 });
 
 //------------------------------------------------------
 
 let figures = document.querySelectorAll('figure');
-console.log(figures);
+
 let preturi = [32, 48, 70, 25, 40, 30, 20, 99.99];
 let titluri = [
                 "Din cer au căzut trei mere",
@@ -106,7 +109,7 @@ changeOrder()
         imagini.reverse();
         changeOrder()
     }
-    console.log(imagini)
+    // console.log(imagini)
 }
 order.addEventListener('change',ordoneaza)
 options.addEventListener('change',ordoneaza)

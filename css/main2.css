@@ -50,7 +50,7 @@ header select {
 }
 /*---------------------------------------------------------------*/
 
-img {
+figure > img {
     width: 20vw;
     overflow: hidden;
     flex: 1 0 auto;

@@ -71,6 +71,10 @@ app.all('*', (req, res) => {
     res.sendFile(`${__dirname}/404.html`);
 });
 
+app.get('/login', (req, res) => {
+
+});
+
 
 app.listen(port, () => {
     console.log(`Serverul a pornit la host: ${port}`);
